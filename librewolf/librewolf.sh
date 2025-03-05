@@ -117,7 +117,7 @@ cat > "$YOUTUBE_LAUNCHER" <<EOF
 trap 'pkill gptokeyb' EXIT
 
 # Launch gptokeyb using partial matching (-p) on the process name.
-\gptokey -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
+\gptokeyb -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
 # Allow a short delay for the mappings to load.
 sleep 1
 # Launch LibreWolf in kiosk mode for YouTube TV using the dedicated profile.
