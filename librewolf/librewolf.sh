@@ -1,0 +1,119 @@
+#!/bin/bash
+# setup_youtube_tv_and_librewolf.sh
+#
+# This script:
+#   - Downloads the LibreWolf AppImage to /storage/Applications.
+#   - Configures LibreWolf for YouTube TV using a dedicated profile (/storage/.librewolf-ps4)
+#     with a forced user agent of "Roku/DVP-9.10 (519.10E04111A)".
+#   - Creates a GPTK mapping file (following the gptokeyb GitHub syntax) in /storage/roms/ports.
+#     The mapping file includes basic navigation keys, face buttons, and maps the left analog stick
+#     (up, down, left, right) to the same directional keys, plus a hotkey (L1+start+select) mapped to Alt+F4.
+#   - Generates two launch scripts in /storage/roms/ports:
+#         1. YoutubeTV.sh: Launches gptokeyb for controller mapping and then LibreWolf in kiosk mode.
+#         2. Librewolf.sh: Launches LibreWolf in normal mode.
+#
+# Requirements: wget or curl, LibreWolf AppImage, gptokeyb.
+
+# Display installation message with a delay.
+echo "This will install the LibreWolf web browser and YouTube TV UI mode launch scripts to ports."
+echo "Installation will begin in 5 seconds..."
+sleep 5
+
+# ---------------------------
+# Step 1: Download and Set Up LibreWolf
+# ---------------------------
+LIBREWOLF_URL="https://gitlab.com/api/v4/projects/24386000/packages/generic/librewolf/135.0-1/LibreWolf.aarch64.AppImage"
+
+echo "Downloading LibreWolf AppImage..."
+mkdir -p /storage/Applications
+cd /storage/Applications
+# Remove any existing file to avoid 'Text file busy' errors.
+rm -f LibreWolf.AppImage
+if ! wget -O LibreWolf.AppImage "$LIBREWOLF_URL"; then
+    curl -Lo LibreWolf.AppImage "$LIBREWOLF_URL"
+fi
+
+echo "Setting executable permissions on LibreWolf.AppImage..."
+chmod +x LibreWolf.AppImage
+
+echo "Configuring LibreWolf settings for YouTube TV..."
+# Use the default Roku UA string.
+UA_STRING="Roku/DVP-9.10 (519.10E04111A)"
+
+# Create a dedicated profile directory for LibreWolf.
+PROFILE_DIR="/storage/.librewolf-ps4"
+mkdir -p "$PROFILE_DIR"
+cat > "$PROFILE_DIR/user.js" <<EOF
+user_pref("general.useragent.override", "$UA_STRING");
+user_pref("dom.gamepad.enabled", true);
+user_pref("dom.gamepad.extensions.enabled", true);
+user_pref("privacy.resistFingerprinting", false);
+user_pref("network.cookie.cookieBehavior", 1);
+user_pref("signon.autofillForms", true);
+user_pref("signon.rememberSignons", true);
+EOF
+
+# ---------------------------
+# Step 2: Create the GPTK Mapping File for YouTube TV
+# ---------------------------
+echo "Creating GPTK mapping file for YouTube TV..."
+
+PORTS_DIR="/storage/roms/ports"
+mkdir -p "$PORTS_DIR"
+GPTK_FILE="$PORTS_DIR/youtube_tv.gptk"
+
+cat > "$GPTK_FILE" <<EOF
+up = up
+down = down
+left = left
+right = right
+a = enter  
+b = esc
+x = space
+y = space
+start = enter
+select = esc
+# Map left analog stick directions to the same keys as the D-pad
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+hotkey = L1+start+select:KEY_LEFTALT+KEY_F4
+EOF
+
+# ---------------------------
+# Step 3: Create the Launch Scripts
+# ---------------------------
+echo "Creating launch scripts in $PORTS_DIR..."
+
+# Define the path to gptokeyb.
+GPTOKEYB="/usr/bin/gptokeyb"
+
+# (A) Youtube TV Launcher (with gptokeyb mapping and kiosk mode using the dedicated profile)
+YOUTUBE_LAUNCHER="$PORTS_DIR/YoutubeTV.sh"
+cat > "$YOUTUBE_LAUNCHER" <<EOF
+#!/bin/bash
+trap 'pkill gptokeyb' EXIT
+
+# Launch gptokeyb using partial matching (-p) on the process name.
+\$GPTOKEYB -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
+# Allow a short delay for the mappings to load.
+sleep 1
+# Launch LibreWolf in kiosk mode for YouTube TV using the dedicated profile.
+ /storage/Applications/LibreWolf.AppImage --kiosk --profile "$PROFILE_DIR" "https://www.youtube.com/tv"
+EOF
+chmod +x "$YOUTUBE_LAUNCHER"
+
+# (B) General LibreWolf Launcher (normal windowed mode)
+LIBREWOLF_LAUNCHER="$PORTS_DIR/Librewolf.sh"
+cat > "$LIBREWOLF_LAUNCHER" <<EOF
+#!/bin/bash
+# Launch LibreWolf in normal (windowed) mode using the default profile.
+ /storage/Applications/LibreWolf.AppImage
+EOF
+chmod +x "$LIBREWOLF_LAUNCHER"
+
+echo "✅ Setup complete!"
+echo "Launch YouTube TV with: $YOUTUBE_LAUNCHER"
+echo "Launch general LibreWolf with: $LIBREWOLF_LAUNCHER"
+echo "Note: Rockchip SoCs need to switch to Panfrost drivers."
