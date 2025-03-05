@@ -3,7 +3,7 @@
 #
 # This script:
 #   - Downloads the LibreWolf AppImage to /storage/Applications.
-#   - Configures LibreWolf for YouTube TV using a dedicated profile (/storage/.librewolf-ps4)
+#   - Configures LibreWolf for YouTube TV using a dedicated profile (/storage/.librewolf)
 #     with a forced user agent of "Roku/DVP-9.10 (519.10E04111A)".
 #   - Creates a GPTK mapping file (following the gptokeyb GitHub syntax) in /storage/roms/ports.
 #     The mapping file includes basic navigation keys, face buttons, and maps the left analog stick
@@ -41,7 +41,7 @@ echo "Configuring LibreWolf settings for YouTube TV..."
 UA_STRING="Roku/DVP-9.10 (519.10E04111A)"
 
 # Create a dedicated profile directory for LibreWolf.
-PROFILE_DIR="/storage/.librewolf-ps4"
+PROFILE_DIR="/storage/.librewolf"
 mkdir -p "$PROFILE_DIR"
 cat > "$PROFILE_DIR/user.js" <<EOF
 user_pref("general.useragent.override", "$UA_STRING");
@@ -96,7 +96,7 @@ cat > "$YOUTUBE_LAUNCHER" <<EOF
 trap 'pkill gptokeyb' EXIT
 
 # Launch gptokeyb using partial matching (-p) on the process name.
-\gptokeyb -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
+\$GPTOKEYB -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
 # Allow a short delay for the mappings to load.
 sleep 1
 # Launch LibreWolf in kiosk mode for YouTube TV using the dedicated profile.
