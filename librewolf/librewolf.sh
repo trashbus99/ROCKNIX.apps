@@ -5,12 +5,14 @@
 #   - Downloads the LibreWolf AppImage to /storage/Applications.
 #   - Configures LibreWolf for YouTube TV using a dedicated profile (/storage/.librewolf)
 #     with a forced user agent of "Roku/DVP-9.10 (519.10E04111A)".
-#   - Creates a GPTK mapping file (following the gptokeyb GitHub syntax) in /storage/roms/ports.
-#     The mapping file includes basic navigation keys, face buttons, and maps the left analog stick
-#     (up, down, left, right) to the same directional keys, plus a hotkey (L1+start+select) mapped to Alt+F4.
+#   - Creates two GPTK mapping files (following the gptokeyb GitHub syntax) in /storage/roms/ports:
+#       1. youtube_tv.gptk: Includes basic navigation keys, face buttons, left analog stick mapping,
+#          and a hotkey (L1+start+select) mapped to Alt+F4.
+#       2. librewolf.gptk: Includes basic navigation keys, face buttons, left analog stick mapping,
+#          and a hotkey (start+select) mapped to Alt+F4.
 #   - Generates two launch scripts in /storage/roms/ports:
 #         1. YoutubeTV.sh: Launches gptokeyb for controller mapping and then LibreWolf in kiosk mode.
-#         2. Librewolf.sh: Launches LibreWolf in normal mode.
+#         2. Librewolf.sh: Launches gptokeyb for controller mapping and then LibreWolf in normal windowed mode.
 #
 # Requirements: wget or curl, LibreWolf AppImage, gptokeyb.
 
@@ -75,15 +77,15 @@ EOF
 rm -f "$PROFILE_DIR/prefs.js"
 
 # ---------------------------
-# Step 2: Create the GPTK Mapping File for YouTube TV
+# Step 2: Create the GPTK Mapping Files
 # ---------------------------
-echo "Creating GPTK mapping file for YouTube TV..."
-
 PORTS_DIR="/storage/roms/ports"
 mkdir -p "$PORTS_DIR"
-GPTK_FILE="$PORTS_DIR/youtube_tv.gptk"
 
-cat > "$GPTK_FILE" <<EOF
+# (A) GPTK mapping file for YouTube TV.
+echo "Creating GPTK mapping file for YouTube TV..."
+GPTK_YOUTUBE_FILE="$PORTS_DIR/youtube_tv.gptk"
+cat > "$GPTK_YOUTUBE_FILE" <<EOF
 up = up
 down = down
 left = left
@@ -102,22 +104,43 @@ left_analog_right = right
 hotkey = L1+start+select:KEY_LEFTALT+KEY_F4
 EOF
 
+# (B) GPTK mapping file for general LibreWolf.
+echo "Creating GPTK mapping file for general LibreWolf..."
+LIBREWOLF_GPTK_FILE="$PORTS_DIR/librewolf.gptk"
+cat > "$LIBREWOLF_GPTK_FILE" <<EOF
+up = up
+down = down
+left = left
+right = right
+a = enter  
+b = esc
+x = space
+y = space
+start = enter
+select = esc
+# Map left analog stick directions to the same keys as the D-pad
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+hotkey = start+select:KEY_LEFTALT+KEY_F4
+EOF
+
 # ---------------------------
 # Step 3: Create the Launch Scripts
 # ---------------------------
-echo "Creating launch scripts in $PORTS_DIR..."
-
 # Define the path to gptokeyb.
 GPTOKEYB="/usr/bin/gptokeyb"
 
 # (A) Youtube TV Launcher (with gptokeyb mapping and kiosk mode using the dedicated profile)
+echo "Creating Youtube TV launch script..."
 YOUTUBE_LAUNCHER="$PORTS_DIR/YoutubeTV.sh"
 cat > "$YOUTUBE_LAUNCHER" <<EOF
 #!/bin/bash
 trap 'pkill gptokeyb' EXIT
 
 # Launch gptokeyb using partial matching (-p) on the process name.
-\gptokeyb -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
+\gptokeyb -p "LibreWolf" -c "$GPTK_YOUTUBE_FILE" -k librewolf &
 # Allow a short delay for the mappings to load.
 sleep 1
 # Launch LibreWolf in kiosk mode for YouTube TV using the dedicated profile.
@@ -126,9 +149,16 @@ EOF
 chmod +x "$YOUTUBE_LAUNCHER"
 
 # (B) General LibreWolf Launcher (normal windowed mode)
+echo "Creating LibreWolf launch script..."
 LIBREWOLF_LAUNCHER="$PORTS_DIR/Librewolf.sh"
 cat > "$LIBREWOLF_LAUNCHER" <<EOF
 #!/bin/bash
+trap 'pkill gptokeyb' EXIT
+
+# Launch gptokeyb with the LibreWolf mapping for start+select killing action.
+\gptokeyb -p "LibreWolf" -c "$LIBREWOLF_GPTK_FILE" -k librewolf &
+# Allow a short delay for the mappings to load.
+sleep 1
 # Launch LibreWolf in normal (windowed) mode using the default profile.
  /storage/Applications/LibreWolf.AppImage -profile "$PROFILE_DIR"
 EOF
