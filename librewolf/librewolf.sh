@@ -37,21 +37,42 @@ echo "Setting executable permissions on LibreWolf.AppImage..."
 chmod +x LibreWolf.AppImage
 
 echo "Configuring LibreWolf settings for YouTube TV..."
-# Use the default Roku UA string.
-UA_STRING="Roku/DVP-9.10 (519.10E04111A)"
-
-# Create a dedicated profile directory for LibreWolf.
+# Define the user agent and other necessary settings.
 PROFILE_DIR="/storage/.librewolf"
 mkdir -p "$PROFILE_DIR"
 cat > "$PROFILE_DIR/user.js" <<EOF
-user_pref("general.useragent.override", "$UA_STRING");
+// Ensure YouTube TV UI loads with the proper user agent.
+user_pref("general.useragent.override", "Roku/DVP-9.10 (519.10E04111A)");
+
+// Enable gamepad support.
 user_pref("dom.gamepad.enabled", true);
 user_pref("dom.gamepad.extensions.enabled", true);
+
+// Basic settings to persist logins and session data.
 user_pref("privacy.resistFingerprinting", false);
 user_pref("network.cookie.cookieBehavior", 1);
 user_pref("signon.autofillForms", true);
 user_pref("signon.rememberSignons", true);
+
+// Prevent clearing cookies & storage on shutdown.
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.sanitize.pending", "");
+user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.offlineApps", false);
+user_pref("privacy.clearOnShutdown.sessions", false);
+user_pref("privacy.clearOnShutdown.siteSettings", false);
+
+// Ensure sessions and cookies persist.
+user_pref("browser.privatebrowsing.autostart", false);
+user_pref("browser.sessionstore.privacy_level", 0);
+user_pref("browser.sessionstore.resume_from_crash", true);
+user_pref("network.cookie.lifetimePolicy", 0);
+user_pref("network.cookie.cookieBehavior", 1);
 EOF
+
+# (Optional) Remove prefs.js so that LibreWolf regenerates it from user.js.
+rm -f "$PROFILE_DIR/prefs.js"
 
 # ---------------------------
 # Step 2: Create the GPTK Mapping File for YouTube TV
@@ -96,11 +117,11 @@ cat > "$YOUTUBE_LAUNCHER" <<EOF
 trap 'pkill gptokeyb' EXIT
 
 # Launch gptokeyb using partial matching (-p) on the process name.
-\gptokeyb -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
+\gptokey -p "LibreWolf" -c "$GPTK_FILE" -k librewolf &
 # Allow a short delay for the mappings to load.
 sleep 1
 # Launch LibreWolf in kiosk mode for YouTube TV using the dedicated profile.
- /storage/Applications/LibreWolf.AppImage --kiosk --profile "$PROFILE_DIR" "https://www.youtube.com/tv"
+ /storage/Applications/LibreWolf.AppImage --kiosk -profile "$PROFILE_DIR" "https://www.youtube.com/tv"
 EOF
 chmod +x "$YOUTUBE_LAUNCHER"
 
@@ -109,12 +130,11 @@ LIBREWOLF_LAUNCHER="$PORTS_DIR/Librewolf.sh"
 cat > "$LIBREWOLF_LAUNCHER" <<EOF
 #!/bin/bash
 # Launch LibreWolf in normal (windowed) mode using the default profile.
- /storage/Applications/LibreWolf.AppImage
+ /storage/Applications/LibreWolf.AppImage -profile "$PROFILE_DIR"
 EOF
 chmod +x "$LIBREWOLF_LAUNCHER"
 
 echo "✅ Setup complete!"
 echo "Launch YouTube TV with: $YOUTUBE_LAUNCHER"
 echo "Launch general LibreWolf with: $LIBREWOLF_LAUNCHER"
-echo "select+start set to kill app"
 echo "Note: Rockchip SoCs need to switch to Panfrost drivers."
