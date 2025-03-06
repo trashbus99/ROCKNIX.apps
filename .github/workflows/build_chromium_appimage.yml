@@ -47,7 +47,7 @@ jobs:
             libdrm-dev libdrm-dev:arm64
 
       - name: Set Up Ccache for Faster Builds
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.ccache
           key: chromium-arm64-ccache-${{ github.run_id }}
@@ -124,7 +124,7 @@ jobs:
           ARCH=arm64 ./appimagetool AppDir Chromium-arm64.AppImage
 
       - name: Upload Chromium ARM64 AppImage
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Chromium-arm64
           path: Chromium-arm64.AppImage
