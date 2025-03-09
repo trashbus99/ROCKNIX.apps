@@ -84,7 +84,6 @@ EOF
 }
 
 # Create kiosk-mode launchers for specific websites.
-create_launcher "chroot-chromium-parsec.sh" "https://web.parsec.app/" "kiosk"
 create_launcher "chroot-chromium-spotify.sh" "https://open.spotify.com/" "kiosk"
 create_launcher "chroot-chromium-geforcenow.sh" "https://play.geforcenow.com/" "kiosk"
 create_launcher "chroot-chromium-amazonluna.sh" "https://luna.amazon.com/" "kiosk"
@@ -94,3 +93,4 @@ create_launcher "chroot-chromium-xcloud.sh" "https://www.xbox.com/en-us/play" "k
 create_launcher "chroot-chromium.sh" "https://google.com" "window"
 
 echo "✅ All launchers created successfully!"
+echo "Select+Start Kills chromium"
