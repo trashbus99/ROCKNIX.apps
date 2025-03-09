@@ -93,4 +93,5 @@ create_launcher "chroot-chromium-xcloud.sh" "https://www.xbox.com/en-us/play" "k
 create_launcher "chroot-chromium.sh" "https://google.com" "window"
 
 echo "✅ All launchers created successfully!"
+echo "ROCKSHIP SOC devices need panfrost drivers enabled"
 echo "Select+Start Kills chromium"
