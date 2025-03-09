@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "ROCKNIX.apps does not condene piracy.  Use repsonsilbly."
+echo "ROCKNIX.apps does not endorse piracy.  Use repsonsilbly."
 sleep 5
 
 #check that alpine is installed; install if not present
