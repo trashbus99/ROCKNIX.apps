@@ -46,7 +46,7 @@ fi
 exec chroot "\$CHROOT_DIR" env \
     WAYLAND_DISPLAY=wayland-0 \
     PULSE_SERVER=unix:\$PULSE_SOCKET \
-    /usr/bin/moonlight-qt
+    /usr/bin/moonlight
 EOF
 
 chmod +x "$LAUNCH_SCRIPT"
