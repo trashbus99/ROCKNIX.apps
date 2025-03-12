@@ -50,6 +50,6 @@ fi
 rm -f "/tmp/$TARBALL"
 
 # Confirm installation completion
-dialog --title "Installation Complete" --msgbox "Steamlink has been successfully installed!\n\nYou can now launch it from PortMaster." 8 50
+dialog --title "Installation Complete" --msgbox "Steamlink has been successfully installed!\n\nYou can now launch it from Ports. Rockip soc users should use panfrost drivers" 8 50
 
 exit 0
