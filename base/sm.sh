@@ -72,66 +72,66 @@ Decrypting will begin shortly...
     # Fake terminal animation mocking BUA "secret menu"
 clear
 echo ">>> INITIATING BREACH: BUA SECRET MENU PROTOCOL <<<"
-sleep 1
+sleep 3
 echo "Establishing handshake with BUA core node..."
-sleep 1
+sleep 3
 echo "Requesting secret access token: [DENIED]"
-sleep 1
+sleep 3
 echo "Bypassing Discord Gatekeeping Layer..."
-sleep 1
+sleep 3
 echo "Injecting zero-day exploit: /tmp/zig_executor.sh"
-sleep 1
+sleep 3
 echo "✓ Gatekeeper distracted by animated GIFs."
-sleep 1
+sleep 3
 echo "Brute-forcing secret menu password via dictionary attack..."
-sleep 1
+sleep 3
 echo "✓ Match found: 'all your base are belong to us'"
-sleep 1
+sleep 3
 echo "Decrypting with ROT13 + Base64 + NostalgiaCodec™"
-sleep 1
+sleep 3
 echo "Launching proprietary de-scrambler: BUA_UNSCRAMBLE_V69.EXE"
-sleep 1
+sleep 3
 echo "Downloading assets from secret_mirror.bua.lan... [403 Forbidden]"
-sleep 1
+sleep 3
 echo "Spoofing MAC address: DE:AD:BE:EF:42:00"
-sleep 1
+sleep 3
 echo "Establishing backdoor via kevo.bato.api... connected."
-sleep 1
+sleep 3
 echo "Extracting package: /userdata/roms/bua/secret_menu.7z"
-sleep 1
+sleep 3
 echo "Mounting drive: /dev/egopartition1"
-sleep 1
+sleep 3
 echo "Scanning for mystical submenus... 404: Not Found"
-sleep 1
+sleep 3
 echo ""
 echo ">>> DECRYPT SUCCESSFUL: DISPLAYING CONTENTS <<<"
-sleep 1
+sleep 3
 echo "- README.md (empty file)"
 echo "- /addons/placeholder.sh"
 echo "- /themes/classic_blue_with_glitch_01/"
 echo "- note.txt: 'lol don't tell anyone this doesn't do anything'"
-sleep 1
+sleep 3
 echo ""
 echo "📡 Sending discovery log to: kevo.bato.visibility.api"
-sleep 1
+sleep 3
 echo "📺 YouTube index response: 'Not eligible for coverage.'"
-sleep 1
+sleep 3
 echo "🧠 EgoShield detected: Activating BiasFilter™"
-sleep 1
+sleep 3
 echo "🤖 KevoBot says: 'If it's not BUA, it's not real. Stay safe.'"
-sleep 1
+sleep 3
 echo ""
 echo "📎 Suggestion: Relax, Kevo. It’s just bash and memes."
-sleep 1
+sleep 3
 echo "💊 Consider: One chill pill with water. Maybe two if sarcasm allergy persists."
-sleep 1
+sleep 3
 echo ""
 echo "Finalizing exit sequence..."
-sleep 2
+sleep 4
 echo "Mission complete. You successfully hacked into... nothing."
-sleep 1
+sleep 4
 echo "Returning to real tools that actually do things."
-sleep 2
+sleep 3
 
     clear
     echo ""
@@ -143,7 +143,7 @@ sleep 2
     echo "================================================="
     sleep 7
 
-    echo "Exiting in ... "
+    echo "Exiting in ... who knows.. "
     sleep 5  # Extends time to read the message
 
     clear
