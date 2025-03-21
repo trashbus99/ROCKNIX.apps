@@ -132,6 +132,29 @@ echo "Mission complete. You successfully hacked into... nothing."
 sleep 4
 echo "Returning to real tools that actually do things."
 sleep 3
+echo ""
+echo ">>> SCANNING FOR OFFICIAL BATOCERA SUPPORT <<<"
+sleep 2
+echo "🛰️  Pinging Batocera Dev HQ..."
+sleep 2
+echo "Response: 'Addons are unsupported. Use at your own risk.'"
+sleep 2
+echo "🔒 EchoChamberShield™ active: filtering user ideas..."
+sleep 2
+echo "📤 Forwarding suggestions to /dev/null..."
+sleep 2
+echo "🧠 Dev response auto-generated: 'You shouldn't need that feature anyway.'"
+sleep 2
+echo "🧼 Sanitizing forums of non-approved creativity..."
+sleep 2
+echo "🚷 Warning: This script violates the Prime Directive — *having fun independently*."
+sleep 2
+echo "🗂️  Filing report: Unauthorized script detected. Possible threat to groupthink."
+sleep 2
+echo ""
+echo "📎 Suggestion: If it works and it's helpful, it's probably 'not official'."
+sleep 2
+
 
     clear
     echo ""
@@ -143,7 +166,7 @@ sleep 3
     echo "================================================="
     sleep 7
 
-    echo "Exiting in ... who knows.. "
+    echo "Exiting in ... who knows..? "
     sleep 5  # Extends time to read the message
 
     clear
