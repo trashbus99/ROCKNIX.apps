@@ -116,7 +116,6 @@ echo "📡 Sending discovery log to: kevo.bato.visibility.api"
 sleep 3
 echo "📺 YouTube index response: 'Not eligible for coverage.'"
 sleep 3
-echo "🧠 EgoShield detected: Activating BiasFilter™"
 sleep 3
 echo "🤖 KevoBot says: 'If it's not BUA, it's not real. Stay safe.'"
 sleep 3
@@ -136,16 +135,16 @@ echo ""
 echo ">>> SCANNING FOR OFFICIAL BATOCERA SUPPORT <<<"
 sleep 2
 echo "🛰️  Pinging Batocera Dev HQ..."
-sleep 2
+sleep 3
 echo "Response: 'Addons are unsupported. Use at your own risk.'"
-sleep 2
+sleep 3
 echo "🔒 EchoChamberShield™ active: filtering user ideas..."
-sleep 2
+sleep 3
 echo "📤 Forwarding suggestions to /dev/null..."
-sleep 2
+sleep 3
 echo "🧠 Dev response auto-generated: 'You shouldn't need that feature anyway.'"
-sleep 2
-echo "🧼 Sanitizing forums of non-approved creativity..."
+sleep 3
+echo "🧼 Sanitizing forums of non-approved creativity...Disregarding UUREEL's suggestions"
 sleep 2
 echo "🚷 Warning: This script violates the Prime Directive — *having fun independently*."
 sleep 2
@@ -161,31 +160,29 @@ sleep 3
 echo ""
 clear
 echo ">>> FINAL REPORT: INTERNAL BATOCERA DEV MATRIX <<<"
-sleep 2
+sleep 3
 echo "Analyzing communication protocols..."
-sleep 2
+sleep 3
 echo "Filtering constructive feedback... [DISCARDED]"
-sleep 2
+sleep 3
 echo ""
-echo "🧠 'EntropyToal': Detected extreme allergy to third-party scripts."
+echo "🧠 'EntropyMost': Detected extreme allergy to third-party scripts."
 echo "  Status: Perma-triggered by anything not written inside his echo chamber."
 echo "  Recommendation: Prescribe bash-blocker and a sense of humor."
-sleep 3
+sleep 4
 echo ""
-echo "👑 'French_King_guy': Logged as project lead archetype."
+echo "👑 'French_Batocera_King_guy': Logged as project lead archetype."
 echo "  Notes: Downplayed innovative ideas, rerouted creativity to /dev/oblivion."
-echo "  Activity: Still installing more wheels."
-sleep 3
+echo "  Activity: Still coding more wheels."
+sleep 4
 echo ""
 echo "🐍 'Down-Under-Type': Gruff INTJ variant detected. Fe-Trickster online."
 echo "  Description: Brutal honesty delivered via sandpaper. Fluent in Australian sarcasm."
 echo "  Dialogue samples:"
 echo "    • 'Stick to the Topic.'"
 echo "    • 'You clearly don’t understand the structure.'"
-echo "    • 'Nah mate, that’s just wrong.'"
-sleep 3
-
-sleep 3
+echo "    • 'No.'"
+sleep 4
 echo ""
 echo "📉 System behavior:"
 echo "  - Community suggestions: Ignored"
@@ -197,10 +194,10 @@ echo "📎 Psychological assessment:"
 echo "  - Leadership style: Consensus illusion"
 echo "  - Bug triage method: GitHub hide-and-seek"
 echo "  - Morale management: Forum censorship + Discord Ghosting"
-sleep 3
+sleep 5
 echo ""
-echo "  One Useful advice Found:"
-echo " Mikhailzrick-Get an N100!"
+echo "  One Useful advice discovered:"
+echo " Mikhailzrick: Get an N100!"
 sleep 3     
 echo "💥 Final Statement: If it wasn't born inside the echo chamber, it doesn't exist."
 sleep 2
