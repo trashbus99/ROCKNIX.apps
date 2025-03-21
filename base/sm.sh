@@ -155,6 +155,11 @@ echo ""
 echo "📎 Suggestion: If it works and it's helpful, it's probably 'not official'."
 sleep 2
 echo ""
+echo "⚠️  The following sequence is a satirical diagnostic report."
+echo "Any resemblance to real devs is purely coincidental... unless it isn’t."
+sleep 3
+echo ""
+clear
 echo ">>> FINAL REPORT: INTERNAL BATOCERA DEV MATRIX <<<"
 sleep 2
 echo "Analyzing communication protocols..."
@@ -162,22 +167,24 @@ sleep 2
 echo "Filtering constructive feedback... [DISCARDED]"
 sleep 2
 echo ""
-echo "🧠 MaximumEntropy: Detected extreme allergy to other people’s scripts."
-echo "  Status: Perma-triggered by anything not written in his personal echo chamber."
+echo "🧠 'EntropyToal': Detected extreme allergy to third-party scripts."
+echo "  Status: Perma-triggered by anything not written inside his echo chamber."
 echo "  Recommendation: Prescribe bash-blocker and a sense of humor."
 sleep 3
 echo ""
-echo "👑 susan34: Logged as project 'boss'."
-echo "  Notes: Downplayed uureel’s ideas, rerouted innovation to /dev/oblivion."
-echo "  Activity: More Wheels."
+echo "👑 'French_King_guy': Logged as project lead archetype."
+echo "  Notes: Downplayed innovative ideas, rerouted creativity to /dev/oblivion."
+echo "  Activity: Still installing more wheels."
 sleep 3
 echo ""
-echo "🐍 dmanlfc: Gruff INTJ subtype detected. Fe-trickster online."
-echo "  Description: Thinks honesty = effectiveness. Delivered in 80-grit sandpaper."
+echo "🐍 'Down-Under-Type': Gruff INTJ variant detected. Fe-Trickster online."
+echo "  Description: Brutal honesty delivered via sandpaper. Fluent in Australian sarcasm."
 echo "  Dialogue samples:"
 echo "    • 'Stick to the Topic.'"
 echo "    • 'You clearly don’t understand the structure.'"
 echo "    • 'Nah mate, that’s just wrong.'"
+sleep 3
+
 sleep 3
 echo ""
 echo "📉 System behavior:"
@@ -193,12 +200,12 @@ echo "  - Morale management: Forum censorship + Discord Ghosting"
 sleep 3
 echo ""
 echo "  One Useful advice Found:"
-echo "   Mikhailzrick-Get an N100!"
+echo " Mikhailzrick-Get an N100!"
 sleep 3     
 echo "💥 Final Statement: If it wasn't born inside the echo chamber, it doesn't exist."
 sleep 2
 echo "📬 All creative thoughts have been safely redirected to /dev/null"
-sleep 1.5
+sleep 4
 
 
 
