@@ -110,7 +110,7 @@ echo "- README.md (empty file)"
 echo "- /addons/placeholder.sh"
 echo "- /themes/classic_blue_with_glitch_01/"
 echo "- note.txt: 'lol don't tell anyone this doesn't do anything'"
-sleep 3
+sleep 5
 echo ""
 echo "📡 Sending discovery log to: kevo.bato.visibility.api"
 sleep 3
@@ -182,7 +182,7 @@ echo "  Dialogue samples:"
 echo "    • 'Stick to the Topic.'"
 echo "    • 'You clearly don’t understand the structure.'"
 echo "    • 'No.'"
-sleep 4
+sleep 7
 echo ""
 echo "📉 System behavior:"
 echo "  - Community suggestions: Ignored"
