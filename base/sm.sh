@@ -70,43 +70,68 @@ Decrypting will begin shortly...
     kill "$RICK_PID" 2>/dev/null
 
     # Fake terminal animation mocking BUA "secret menu"
-    clear
-    echo ">>> ATTEMPTING TO DECRYPT BUA SECRET MENU MODULE <<<"
-    sleep 1
-    echo "Locating encrypted payload: /userdata/roms/bua/secret_menu.7z"
-    sleep 1
-    echo "✓ Found: BUA_DISCORD_CLUE_CACHE.dat"
-    sleep 1
-    echo "Scraping Reddit for half-baked hints..."
-    sleep 1
-    echo "Injecting Copium into config.dat..."
-    sleep 0.7
-    echo "Patching Discord logs with fake credentials..."
-    sleep 0.8
-    echo "Mounting /dev/meme_partition..."
-    sleep 1
-    echo "Decrypting BUA secret using XOR loop of zeroes..."
-    sleep 0.9
-    echo "Launching BUA Disappointment Engine™..."
-    sleep 1
-    echo "███████████████████████████████████████████████ 100%"
-    sleep 0.5
-    echo ""
-    echo "🚨 ALERT: Contents of BUA Secret Menu:"
-    sleep 1
-    echo "- 1 broken scraper script"
-    echo "- 8-year-old meme references"
-    echo "- 1 link to a deleted Myrient page"
-    sleep 1
-    echo ""
-    echo "✅ Success: You have successfully decrypted nothing of value."
-    echo ""
-    echo "BUA Secret Menu will now self-destruct to maintain mystique."
-    echo ""
-    sleep 3
-
-    echo "Finalizing... Please wait."
-    sleep 5
+clear
+echo ">>> INITIATING BREACH: BUA SECRET MENU PROTOCOL <<<"
+sleep 1
+echo "Establishing handshake with BUA core node..."
+sleep 1
+echo "Requesting secret access token: [DENIED]"
+sleep 1
+echo "Bypassing Discord Gatekeeping Layer..."
+sleep 1
+echo "Injecting zero-day exploit: /tmp/zig_executor.sh"
+sleep 1
+echo "✓ Gatekeeper distracted by animated GIFs."
+sleep 1
+echo "Brute-forcing secret menu password via dictionary attack..."
+sleep 1
+echo "✓ Match found: 'all your base are belong to us'"
+sleep 1
+echo "Decrypting with ROT13 + Base64 + NostalgiaCodec™"
+sleep 1
+echo "Launching proprietary de-scrambler: BUA_UNSCRAMBLE_V69.EXE"
+sleep 1
+echo "Downloading assets from secret_mirror.bua.lan... [403 Forbidden]"
+sleep 1
+echo "Spoofing MAC address: DE:AD:BE:EF:42:00"
+sleep 1
+echo "Establishing backdoor via kevo.bato.api... connected."
+sleep 1
+echo "Extracting package: /userdata/roms/bua/secret_menu.7z"
+sleep 1
+echo "Mounting drive: /dev/egopartition1"
+sleep 1
+echo "Scanning for mystical submenus... 404: Not Found"
+sleep 1
+echo ""
+echo ">>> DECRYPT SUCCESSFUL: DISPLAYING CONTENTS <<<"
+sleep 1
+echo "- README.md (empty file)"
+echo "- /addons/placeholder.sh"
+echo "- /themes/classic_blue_with_glitch_01/"
+echo "- note.txt: 'lol don't tell anyone this doesn't do anything'"
+sleep 1
+echo ""
+echo "📡 Sending discovery log to: kevo.bato.visibility.api"
+sleep 1
+echo "📺 YouTube index response: 'Not eligible for coverage.'"
+sleep 1
+echo "🧠 EgoShield detected: Activating BiasFilter™"
+sleep 1
+echo "🤖 KevoBot says: 'If it's not BUA, it's not real. Stay safe.'"
+sleep 1
+echo ""
+echo "📎 Suggestion: Relax, Kevo. It’s just bash and memes."
+sleep 1
+echo "💊 Consider: One chill pill with water. Maybe two if sarcasm allergy persists."
+sleep 1
+echo ""
+echo "Finalizing exit sequence..."
+sleep 2
+echo "Mission complete. You successfully hacked into... nothing."
+sleep 1
+echo "Returning to real tools that actually do things."
+sleep 2
 
     clear
     echo ""
