@@ -69,52 +69,60 @@ Decrypting will begin shortly...
     # Kill Rickroll
     kill "$RICK_PID" 2>/dev/null
 
-    # Fake terminal animation
+    # Fake terminal animation mocking BUA "secret menu"
     clear
-    echo ">>> INITIALIZING SECURE DECRYPTION MODULE v3.1-beta <<<"
+    echo ">>> ATTEMPTING TO DECRYPT BUA SECRET MENU MODULE <<<"
     sleep 1
-    echo "Locating encrypted payload..."
+    echo "Locating encrypted payload: /userdata/roms/bua/secret_menu.7z"
     sleep 1
-    echo "✓ Found: /userdata/roms/memes/ultrasecret.7z"
+    echo "✓ Found: BUA_DISCORD_CLUE_CACHE.dat"
     sleep 1
-    echo "Mounting virtual floppy..."
+    echo "Scraping Reddit for half-baked hints..."
     sleep 1
-    echo "Injecting quantum bitstream..."
+    echo "Injecting Copium into config.dat..."
     sleep 0.7
-    echo "Bypassing BIOS jumper..."
-    sleep 0.6
-    echo "Cracking 1024-bit key with pizza algorithm..."
+    echo "Patching Discord logs with fake credentials..."
+    sleep 0.8
+    echo "Mounting /dev/meme_partition..."
+    sleep 1
+    echo "Decrypting BUA secret using XOR loop of zeroes..."
     sleep 0.9
-    echo "Extracting contents..."
-    for i in {1..5}; do
-        echo -n "█"
-        sleep 0.3
-    done
-    echo "  Done."
+    echo "Launching BUA Disappointment Engine™..."
+    sleep 1
+    echo "███████████████████████████████████████████████ 100%"
     sleep 0.5
-    echo "Analyzing payload signature..."
+    echo ""
+    echo "🚨 ALERT: Contents of BUA Secret Menu:"
     sleep 1
-    echo "🚨 WARNING: File is not a ROM."
-    sleep 1
-    echo "Decryption complete. Contents: one low-res GIF of a spinning hotdog."
+    echo "- 1 broken scraper script"
+    echo "- 8-year-old meme references"
+    echo "- 1 link to a deleted Myrient page"
     sleep 1
     echo ""
-    echo "Mission complete. You've been gloriously trolled."
+    echo "✅ Success: You have successfully decrypted nothing of value."
     echo ""
-    
+    echo "BUA Secret Menu will now self-destruct to maintain mystique."
+    echo ""
+    sleep 3
+
     echo "Finalizing... Please wait."
-    sleep 5  # Extends time to read the message
+    sleep 5
 
     clear
     echo ""
     echo "================================================="
     echo " You typed the whole thing. You legend."
     echo " Somewhere, a Myrient mirror just winked at you."
-    echo " Now go outside. Or at least play a game."
+    echo " You have joined the elite: Troll Tier 3."
     echo " THIS IS NOT RETURNING TO THE MAIN MENU."
     echo "================================================="
-    sleep 7  # Extra time before script exits
+    sleep 7
 
+    echo "Exiting in ... "
+    sleep 5  # Extends time to read the message
+
+    clear
+   
 else
     # Wrong password → Play the Price is Right Loser Horn
     if command -v cvlc >/dev/null 2>&1; then
@@ -135,8 +143,8 @@ Please reflect on your choices.
 NOT returning to the main menu." 15 60
 
     kill "$HORN_PID" 2>/dev/null
-    sleep 7  # Extra time before script exits
-
+    sleep 2  # Extra time before script exits
+clear
     echo ""
     echo "================================================="
     echo " ACCESS DENIED. SHAME DEPLOYED."
