@@ -3,35 +3,36 @@
 # File paths
 JEOPARDY_AUDIO="/userdata/music/jeopardy.mp3"
 RICKROLL_AUDIO="/userdata/music/rickroll.mp3"
+LOSER_HORN_AUDIO="/userdata/music/loserhorn.mp3"
 
 # Your hosted GitHub MP3 URLs
 JEOPARDY_URL="https://github.com/trashbus99/profork/raw/master/.dep/.ytrk/at.mp3"
 RICKROLL_URL="https://github.com/trashbus99/profork/raw/master/.dep/.ytrk/ee.mp3"
+LOSER_HORN_URL="https://github.com/trashbus99/profork/raw/master/.dep/.ytrk/lh.mp3"
 
 # Ensure the directory exists
 mkdir -p /userdata/music
 
-# Download Jeopardy theme if missing
-if [ ! -f "$JEOPARDY_AUDIO" ]; then
-    echo "Please wait..."
-    wget -q -O "$JEOPARDY_AUDIO" "$JEOPARDY_URL"
-fi
+# Download MP3s if missing
+for file in "$JEOPARDY_AUDIO" "$RICKROLL_AUDIO" "$LOSER_HORN_AUDIO"; do
+    case $file in
+        "$JEOPARDY_AUDIO") URL="$JEOPARDY_URL" ;;
+        "$RICKROLL_AUDIO") URL="$RICKROLL_URL" ;;
+        "$LOSER_HORN_AUDIO") URL="$LOSER_HORN_URL" ;;
+    esac
 
-# Download Rickroll if missing
-if [ ! -f "$RICKROLL_AUDIO" ]; then
-    echo "Almost Done..."
-    wget -q -O "$RICKROLL_AUDIO" "$RICKROLL_URL"
-fi
+    if [ ! -f "$file" ]; then
+        wget -q -O "$file" "$URL"
+    fi
+done
 
 # Play Jeopardy theme quietly in background
-if [ -f "$JEOPARDY_AUDIO" ]; then
-    if command -v cvlc >/dev/null 2>&1; then
-        cvlc --play-and-exit --no-video "$JEOPARDY_AUDIO" >/dev/null 2>&1 &
-    elif command -v mpg123 >/dev/null 2>&1; then
-        mpg123 -q "$JEOPARDY_AUDIO" &
-    fi
-    MUSIC_PID=$!
+if command -v cvlc >/dev/null 2>&1; then
+    cvlc --play-and-exit --no-video "$JEOPARDY_AUDIO" >/dev/null 2>&1 &
+elif command -v mpg123 >/dev/null 2>&1; then
+    mpg123 -q "$JEOPARDY_AUDIO" &
 fi
+MUSIC_PID=$!
 
 # Prompt for password
 PASSWORD=$(dialog --nocancel --inputbox "Enter the secret password:\n\nHint: In A.D. 2101, war was beginning...\nClassic Engrish from Zero Wing." 12 60 3>&1 1>&2 2>&3)
@@ -49,14 +50,12 @@ if [ "$PASSWORD_NORM" == "$SECRET" ]; then
     sleep 1
 
     # Play Rickroll in background
-    if [ -f "$RICKROLL_AUDIO" ]; then
-        if command -v cvlc >/dev/null 2>&1; then
-            cvlc --play-and-exit --no-video "$RICKROLL_AUDIO" >/dev/null 2>&1 &
-        elif command -v mpg123 >/dev/null 2>&1; then
-            mpg123 -q "$RICKROLL_AUDIO" &
-        fi
-        RICK_PID=$!
+    if command -v cvlc >/dev/null 2>&1; then
+        cvlc --play-and-exit --no-video "$RICKROLL_AUDIO" >/dev/null 2>&1 &
+    elif command -v mpg123 >/dev/null 2>&1; then
+        mpg123 -q "$RICKROLL_AUDIO" &
     fi
+    RICK_PID=$!
 
     # Troll message
     dialog --msgbox "
@@ -102,36 +101,51 @@ Decrypting will begin shortly...
     echo ""
     echo "Mission complete. You've been gloriously trolled."
     echo ""
-    echo "Not Returning to main menu..."
-    sleep 3
+    
+    echo "Finalizing... Please wait."
+    sleep 5  # Extends time to read the message
+
     clear
     echo ""
     echo "================================================="
     echo " You typed the whole thing. You legend."
     echo " Somewhere, a Myrient mirror just winked at you."
     echo " Now go outside. Or at least play a game."
+    echo " THIS IS NOT RETURNING TO THE MAIN MENU."
     echo "================================================="
-    echo ""
+    sleep 7  # Extra time before script exits
 
 else
-    # Wrong password
+    # Wrong password → Play the Price is Right Loser Horn
+    if command -v cvlc >/dev/null 2>&1; then
+        cvlc --play-and-exit --no-video "$LOSER_HORN_AUDIO" >/dev/null 2>&1 &
+    elif command -v mpg123 >/dev/null 2>&1; then
+        mpg123 -q "$LOSER_HORN_AUDIO" &
+    fi
+    HORN_PID=$!
+
     dialog --msgbox "ACCESS DENIED.
 
-Incorrect password.
+You have failed the sacred test of retro meme literacy.
 
-The hint was from the most iconic Engrish in ROM culture history.
+Your failure is now being recorded for future Batocera historians.
 
-You're either too young, too old, or too normal to know the truth.
+Please reflect on your choices.
 
-Return when you're ready to ZIG." 12 60
+NOT returning to the main menu." 15 60
+
+    kill "$HORN_PID" 2>/dev/null
+    sleep 7  # Extra time before script exits
 
     echo ""
     echo "================================================="
     echo " ACCESS DENIED. SHAME DEPLOYED."
-    echo " Tip: It's not 'OpenSesame123'."
+    echo " Tip: The password was not 'OpenSesame123'."
     echo " You may now return to Discord to argue about it."
+    echo " THIS IS NOT RETURNING TO THE MAIN MENU."
     echo "================================================="
-    echo ""
-    exit 0
+    sleep 7
 fi
 
+# 🔥 Auto-delete the MP3s so they always get re-downloaded!
+rm -f "$JEOPARDY_AUDIO" "$RICKROLL_AUDIO" "$LOSER_HORN_AUDIO"
