@@ -99,7 +99,7 @@ echo "Establishing backdoor via kevo.bato.api... connected."
 sleep 3
 echo "Extracting package: /userdata/roms/bua/secret_menu.7z"
 sleep 3
-echo "Mounting drive: /dev/egopartition1"
+echo "Mounting drive: /dev/kevobatogatekeeper"
 sleep 3
 echo "Scanning for mystical submenus... 404: Not Found"
 sleep 3
@@ -133,48 +133,48 @@ echo "Returning to real tools that actually do things."
 sleep 3
 echo ""
 echo ">>> SCANNING FOR OFFICIAL BATOCERA SUPPORT <<<"
-sleep 2
+sleep 4
 echo "🛰️  Pinging Batocera Dev HQ..."
 sleep 3
 echo "Response: 'Addons are unsupported. Use at your own risk.'"
 sleep 3
 echo "🔒 EchoChamberShield™ active: filtering user ideas..."
-sleep 3
+sleep 4
 echo "📤 Forwarding suggestions to /dev/null..."
 sleep 3
 echo "🧠 Dev response auto-generated: 'You shouldn't need that feature anyway.'"
-sleep 3
+sleep 4
 echo "🧼 Sanitizing forums of non-approved creativity...Disregarding UUREEL's suggestions"
-sleep 2
+sleep 4
 echo "🚷 Warning: This script violates the Prime Directive — *having fun independently*."
-sleep 2
+sleep 4
 echo "🗂️  Filing report: Unauthorized script detected. Possible threat to groupthink."
 sleep 2
 echo ""
 echo "📎 Suggestion: If it works and it's helpful, it's probably 'not official'."
-sleep 2
+sleep 4
 echo ""
 echo "⚠️  The following sequence is a satirical diagnostic report."
 echo "Any resemblance to real devs is purely coincidental... unless it isn’t."
-sleep 3
+sleep 4
 echo ""
 clear
 echo ">>> FINAL REPORT: INTERNAL BATOCERA DEV MATRIX <<<"
-sleep 3
+sleep 5
 echo "Analyzing communication protocols..."
-sleep 3
+sleep 5
 echo "Filtering constructive feedback... [DISCARDED]"
-sleep 3
+sleep 5
 echo ""
 echo "🧠 'EntropyMost': Detected extreme allergy to third-party scripts."
 echo "  Status: Perma-triggered by anything not written inside his echo chamber."
 echo "  Recommendation: Prescribe bash-blocker and a sense of humor."
-sleep 4
+sleep 5
 echo ""
 echo "👑 'French_Batocera_King_guy': Logged as project lead archetype."
 echo "  Notes: Downplayed innovative ideas, rerouted creativity to /dev/oblivion."
 echo "  Activity: Still coding more wheels."
-sleep 4
+sleep 5
 echo ""
 echo "🐍 'Down-Under-Type': Gruff INTJ variant detected. Fe-Trickster online."
 echo "  Description: Brutal honesty delivered via sandpaper. Fluent in Australian sarcasm."
@@ -188,7 +188,7 @@ echo "📉 System behavior:"
 echo "  - Community suggestions: Ignored"
 echo "  - Addons: Flagged as threats"
 echo "  - Working forks: Treated like betrayals"
-sleep 2
+sleep 5
 echo ""
 echo "📎 Psychological assessment:"
 echo "  - Leadership style: Consensus illusion"
@@ -196,27 +196,17 @@ echo "  - Bug triage method: GitHub hide-and-seek"
 echo "  - Morale management: Forum censorship + Discord Ghosting"
 sleep 5
 echo ""
-echo "  One Useful advice discovered:"
-echo " Mikhailzrick: Get an N100!"
-sleep 3     
-echo  "Another constructive piece of advice discovered: UUREEL: Use Retrobat.
-echo  "
+echo "One Useful advice discovered:"
+echo "Mikhailzrick: Get an N100!"
+sleep 5     
+echo  "Another constructive piece of advice discovered: UUREEL: Use Retrobat."
+sleep 5
+echo  ""
 echo "💥 Final Statement: If it wasn't born inside the echo chamber, it doesn't exist."
 sleep 3
 echo "📬 All creative thoughts have been safely redirected to /dev/null"
 sleep 4
 
-
-
-    clear
-    echo ""
-    echo "================================================="
-    echo " You typed the whole thing. You legend."
-    echo " Somewhere, a Myrient mirror just winked at you."
-    echo " You have joined the elite: Troll Tier 3."
-    echo " THIS IS NOT RETURNING TO THE MAIN MENU."
-    echo "================================================="
-    sleep 7
 
     echo "Exiting in ... who knows..? "
     sleep 5  # Extends time to read the message
