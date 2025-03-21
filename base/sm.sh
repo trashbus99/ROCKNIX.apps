@@ -199,8 +199,10 @@ echo ""
 echo "  One Useful advice discovered:"
 echo " Mikhailzrick: Get an N100!"
 sleep 3     
+echo  "Another constructive piece of advice discovered: UUREEL: Use Retrobat.
+echo  "
 echo "💥 Final Statement: If it wasn't born inside the echo chamber, it doesn't exist."
-sleep 2
+sleep 3
 echo "📬 All creative thoughts have been safely redirected to /dev/null"
 sleep 4
 
