@@ -107,7 +107,7 @@ echo ""
 echo ">>> DECRYPT SUCCESSFUL: DISPLAYING CONTENTS <<<"
 sleep 3
 echo "- README.md (empty file)"
-echo "- /addons/placeholder.sh"
+echo "- rm -f /addons/myirentfetcher.sh "
 echo "- /themes/classic_blue_with_glitch_01/"
 echo "- note.txt: 'lol don't tell anyone this doesn't do anything'"
 sleep 5
@@ -119,6 +119,8 @@ sleep 3
 sleep 3
 echo "🤖 KevoBot says: 'If it's not BUA, it's not real. Stay safe.'"
 sleep 3
+echo  "recovering non-BUA alternative censorsed comments"
+sleep 2
 echo ""
 echo "📎 Suggestion: Relax, Kevo. It’s just bash and memes."
 sleep 3
@@ -131,6 +133,7 @@ echo "Mission complete. You successfully hacked into... nothing."
 sleep 4
 echo "Returning to real tools that actually do things."
 sleep 3
+clear
 echo ""
 echo ">>> SCANNING FOR OFFICIAL BATOCERA SUPPORT <<<"
 sleep 4
