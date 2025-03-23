@@ -35,7 +35,7 @@ fi
 MUSIC_PID=$!
 
 # Prompt for password
-PASSWORD=$(dialog --nocancel --inputbox "Enter the secret password:\n\nHint: In A.D. 2101, war was beginning...\nClassic Engrish from Zero Wing." 12 60 3>&1 1>&2 2>&3)
+PASSWORD=$(dialog --nocancel --inputbox "Enter the secret password:\n\nHint: In 2101, war was beginning...\nClassic Engrish from Zero Wing." 12 60 3>&1 1>&2 2>&3)
 
 # Stop Jeopardy music
 kill "$MUSIC_PID" 2>/dev/null
