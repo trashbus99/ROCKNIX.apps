@@ -58,4 +58,4 @@ echo "✅ Symlinked as: $BIN_WRAPPER/pkgx"
 echo "✅ PATH updated in: $PROFILE and loaded now"
 echo
 echo "🚀 Try something fun: run 👉 pkgx fastfetch"
-echo "   Or try: pkgx htop, pkgx rsync, pkgx patchelf"
+
