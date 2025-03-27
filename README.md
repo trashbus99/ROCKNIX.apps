@@ -1,6 +1,12 @@
 Librewolf and YoutubeTV launcher for Rocknix.
-In SSH  run `curl -L bit.ly/rocknixyoutube | bash`
+In SSH  run
+`curl -L bit.ly/rocknixyoutube | bash`
 
 
 Chromium with Spotify, Geforce Now, Amazon Luna, and Xcloud shortcuts
-In SSH run: `curl -L bit.ly/rocknixchromium | bash`
+In SSH run:
+`curl -L bit.ly/rocknixchromium | bash`
+
+PKGX - CLI tools
+`curl -L bit.ly/rocknix-pkgx | bash`
+list of pkgs - https://pkgx.dev/pkgs/ 
