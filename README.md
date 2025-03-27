@@ -1,4 +1,4 @@
-Librewolf and YoutubeTV launcher for Rocknix.
+Librewolf with Youtube TV UI (navigate with gamepad) launcher for Rocknix.
 
 In SSH  run
 
