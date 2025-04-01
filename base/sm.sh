@@ -223,7 +223,7 @@ echo "Launching Profork main menu..."
 sleep 2
 
 # Relaunch main menu
-curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh
+curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh | bash
    
 else
     # Wrong password → Play the Price is Right Loser Horn
@@ -265,7 +265,7 @@ echo "Launching Profork main menu..."
 sleep 2
 
 # Relaunch main menu
-curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh
+curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh | bash
 fi
 
 # 🔥 Auto-delete the MP3s so they always get re-downloaded!
