@@ -211,10 +211,19 @@ echo "📬 All creative thoughts have been safely redirected to /dev/null"
 sleep 4
 
 
-    echo "Exiting in ... who knows..? "
-    sleep 5  # Extends time to read the message
+    echo ">>> Meanwhile, back at the not-so-secret base..."
+sleep 3
 
-    clear
+# Optional jab
+echo "NOTE: Unlike other menus, this one doesn't redirect through an encrypted .php script hosted behind rainbow unicorns."
+
+sleep 2
+echo
+echo "Launching Profork main menu..."
+sleep 2
+
+# Relaunch main menu
+curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh
    
 else
     # Wrong password → Play the Price is Right Loser Horn
@@ -231,9 +240,7 @@ You have failed the sacred test of retro meme literacy.
 
 Your failure is now being recorded for future Batocera historians.
 
-Please reflect on your choices.
-
-NOT returning to the main menu." 15 60
+Please reflect on your choices." 15 60
 
     kill "$HORN_PID" 2>/dev/null
     sleep 2  # Extra time before script exits
@@ -243,9 +250,22 @@ clear
     echo " ACCESS DENIED. SHAME DEPLOYED."
     echo " Tip: The password was not 'OpenSesame123'."
     echo " You may now return to Discord to argue about it."
-    echo " THIS IS NOT RETURNING TO THE MAIN MENU."
+    echo " THIS IS NOW RETURNING TO THE MAIN MENU."
     echo "================================================="
     sleep 7
+    echo ">>> Meanwhile, back at the not-so-secret base..."
+sleep 3
+
+# Optional jab
+echo "NOTE: Unlike other menus, this one doesn't redirect through an encrypted .php script hosted behind rainbow unicorns."
+
+sleep 2
+echo
+echo "Launching Profork main menu..."
+sleep 2
+
+# Relaunch main menu
+curl -Ls https://github.com/trashbus99/profork/raw/master/app/mainmenu.sh
 fi
 
 # 🔥 Auto-delete the MP3s so they always get re-downloaded!
