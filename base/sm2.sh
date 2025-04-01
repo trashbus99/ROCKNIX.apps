@@ -43,10 +43,10 @@ echo "   • Absolutely nothing proprietary"
 echo "   • Zero ego-driven features"
 echo "   • All the tools you had access to already"
 echo "   • A fully working, unencrypted, GPL-compliant menu"
-
+echo 10
 echo
 echo ">>> Meanwhile, back at the not-so-secret base..."
-sleep 3
+sleep 6
 
 curl -Ls https://github.com/trashbus99/ROCKNIX.apps/raw/main/base/sm.sh | bash
 
